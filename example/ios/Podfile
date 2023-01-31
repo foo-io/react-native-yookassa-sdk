@@ -1,7 +1,8 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-
-platform :ios, '12.4'
+source 'https://cdn.cocoapods.org/'
+source 'https://git.yoomoney.ru/scm/sdk/cocoa-pod-specs.git'
+platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'YookassaSdkExample' do
@@ -26,6 +27,10 @@ target 'YookassaSdkExample' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'YooKassaPayments',
+    :git => 'https://git.yoomoney.ru/scm/sdk/yookassa-payments-swift.git',
+    :tag => '6.10.0'
+    
   target 'YookassaSdkExampleTests' do
     inherit! :complete
     # Pods for testing
