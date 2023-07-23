@@ -1,0 +1,1 @@
+export { YookassaSdk } from './YooKassaSdk';

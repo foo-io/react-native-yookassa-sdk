@@ -1,20 +1,38 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-yookassa-sdk';
+import { StyleSheet, View } from 'react-native';
+// import {
+//   Currency,
+//   PaymentMethodType,
+//   SavePaymentMethod,
+//   startTokenize,
+// } from 'react-native-yookassa-sdk';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  //const [result, setResult] = React.useState<number | undefined>();
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  // React.useEffect(() => {
+  //   startTokenize({
+  //     amount: { value: 100, currency: Currency.RUB },
+  //     title: 'Заголовок',
+  //     subtitle: 'Подзаголовок',
+  //     clientApplicationKey: 'test_NjY3MTY3NS1m6nMF5kqKGyk8ItcdVWx-Qoz7IWOta6U',
+  //     shopId: '667167',
+  //     savePaymentMethod: SavePaymentMethod.OFF,
+  //     paymentMethodTypes: [
+  //       PaymentMethodType.SBERBANK,
+  //       PaymentMethodType.BANK_CARD,
+  //       PaymentMethodType.GOOGLE_PAY,
+  //       PaymentMethodType.YOO_MONEY,
+  //     ],
+  //   }).then((r) => {
+  //     debugger
+  //   }).catch((e) => {
+  //     debugger
+  //   });
+  // }, []);
 
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+  return <View style={styles.container} />;
 }
 
 const styles = StyleSheet.create({

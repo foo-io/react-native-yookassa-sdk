@@ -2,9 +2,15 @@
 
 @interface RCT_EXTERN_MODULE(YookassaSdk, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
+RCT_EXTERN_METHOD(startTokenize:(NSDictionary *) paymentParameters
                  withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+                 withRejector:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(startConfirmation:(NSDictionary *) confirmationParameters
+                  withResolver:(RCTPromiseResolveBlock)resolve
+                  withRejector:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(dismiss)
 
 + (BOOL)requiresMainQueueSetup
 {
