@@ -209,12 +209,12 @@ class YookassaSdk: NSObject, TokenizationModuleOutput {
         )
 
         let tokenizationSettings = TokenizationSettings(
-            paymentMethodTypes: paymentMethodTypes,
-            showYooKassaLogo: showYooKassaLogo == true || showYooKassaLogo == nil
+            paymentMethodTypes: paymentMethodTypes
         )
 
         let customizationSettings = CustomizationSettings(
-            mainScheme: primaryColor != nil ? hexToUIColor(hex: primaryColor!) : CustomizationColors.blueRibbon
+            mainScheme: primaryColor != nil ? hexToUIColor(hex: primaryColor!) : CustomizationColors.blueRibbon,
+            showYooKassaLogo: showYooKassaLogo == true || showYooKassaLogo == nil
         )
 
         let testModeSettings = TestModeSettings(paymentAuthorizationPassed: false,
