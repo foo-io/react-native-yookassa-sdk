@@ -72,7 +72,7 @@ class YookassaSdkModule(reactContext: ReactApplicationContext) :
     if (paymentTypes == null) {
       paymentMethodTypes.add(PaymentMethodType.BANK_CARD)
       paymentMethodTypes.add(PaymentMethodType.SBERBANK)
-      paymentMethodTypes.add(PaymentMethodType.GOOGLE_PAY)
+      paymentMethodTypes.add(PaymentMethodType.SBP)
 
       if (authCenterClientIdProvided) {
         paymentMethodTypes.add(PaymentMethodType.YOO_MONEY)
@@ -82,7 +82,7 @@ class YookassaSdkModule(reactContext: ReactApplicationContext) :
         when (paymentTypes.getString(i)) {
           "BANK_CARD" -> paymentMethodTypes.add(PaymentMethodType.BANK_CARD)
           "SBERBANK" -> paymentMethodTypes.add(PaymentMethodType.SBERBANK)
-          "GOOGLE_PAY" -> paymentMethodTypes.add(PaymentMethodType.GOOGLE_PAY)
+          "SBP" -> paymentMethodTypes.add(PaymentMethodType.SBP)
           "YOO_MONEY" -> if (authCenterClientIdProvided) {
             paymentMethodTypes.add(PaymentMethodType.YOO_MONEY)
           }
