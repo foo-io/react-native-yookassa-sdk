@@ -203,8 +203,9 @@ class YookassaSdkModule(reactContext: ReactApplicationContext) :
     resultPromise = promise;
 
     val confirmationUrl = parameters.getString("confirmationUrl")!!
+    val clientApplicationKey = parameters.getString("clientApplicationKey")!!
     val paymentMethodType = PaymentMethodType.valueOf(parameters.getString("paymentMethodType")!!)
-    val intent = createConfirmationIntent(reactApplicationContext, confirmationUrl, paymentMethodType)
+    val intent = createConfirmationIntent(reactApplicationContext, confirmationUrl, paymentMethodType, clientApplicationKey)
 
     if (currentActivity != null) {
       currentActivity?.startActivityForResult(intent, REQUEST_CODE_3DS)
