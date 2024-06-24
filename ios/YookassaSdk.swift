@@ -173,6 +173,7 @@ class YookassaSdk: NSObject, TokenizationModuleOutput {
         self.rejectPromise = reject;
 
         guard let clientApplicationKey = params["clientApplicationKey"] as? String,
+              let shopId = params["shopId"] as? String,
               let shopName = params["title"] as? String,
               let purchaseDescription = params["subtitle"] as? String,
               let savePaymentMethod = params["savePaymentMethod"] as? String,
@@ -213,7 +214,7 @@ class YookassaSdk: NSObject, TokenizationModuleOutput {
         )
 
         let customizationSettings = CustomizationSettings(
-            mainScheme: primaryColor != nil ? hexToUIColor(hex: primaryColor!) : CustomizationColors.blueRibbon,
+            mainScheme: primaryColor != nil ? hexToUIColor(hex: primaryColor!) : CustomizationColors.mainScheme,
             showYooKassaLogo: showYooKassaLogo == true || showYooKassaLogo == nil
         )
 
@@ -225,6 +226,7 @@ class YookassaSdk: NSObject, TokenizationModuleOutput {
         let tokenizationModuleInputData =
             TokenizationModuleInputData(clientApplicationKey: clientApplicationKey,
             shopName: shopName,
+            shopId: shopId,
             purchaseDescription: purchaseDescription,
             amount: amount,
             gatewayId: gatewayId,

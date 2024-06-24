@@ -71,7 +71,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'ru.yoomoney.sdk.kassa.payments:yookassa-android-sdk:6.7.0'
+  implementation 'ru.yoomoney.sdk.kassa.payments:yookassa-android-sdk:6.11.0'
 }
 
 if (isNewArchitectureEnabled()) {
